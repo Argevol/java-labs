@@ -17,7 +17,7 @@ public class Matrix {
         this.array = array;
     }
 
-    public Matrix Random(final int min, final int max) {
+    public Matrix random(final int min, final int max) {
         for (int i = 0; i < this.rows; i++) {
             for (int j = 0; j < this.columns; j++) {
                 this.array[i][j] = (int) ((Math.random() * (max - min)) + min);
@@ -26,7 +26,7 @@ public class Matrix {
         return this;
     }
 
-    public void PrintMatrix() {
+    public void printMatrix() {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 System.out.print(array[i][j] + " ");
@@ -35,7 +35,7 @@ public class Matrix {
         }
     }
 
-    public Matrix Multi(final Matrix matrix) {
+    public Matrix multi(final Matrix matrix) {
         if (this.columns != matrix.rows) throw new RuntimeException("Wrong matrix dimensions");
 
         final Matrix result = new Matrix(this.rows, matrix.columns);

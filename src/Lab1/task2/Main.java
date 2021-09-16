@@ -4,23 +4,23 @@ public class Main {
     public static void main(final String[] args) {
         final String[] strArray = {"Learn", "on", "your", "mistakes"};
 
-        Print(strArray);
+        print(strArray);
 
-        System.out.println(SearchCount(strArray, 'r'));
+        System.out.println(searchCount(strArray, 'r'));
     }
 
-    public static void Print (final String[] strArray){
+    public static void print(final String[] strArray) {
         for (final String str : strArray) {
             System.out.println(str);
         }
     }
 
-    public static int SearchCount(final String[] strArray, final char ch){
+    public static int searchCount(final String[] strArray, final char ch) {
         int k = 0;
-        for(int i = 0; i < strArray.length; i++){
-           for(int j = 0; j < strArray[i].length(); j++){
-               if (strArray[i].charAt(j) == ch)
-                   k++;
+        for (int i = 0; i < strArray.length; i++) {
+            for (int j = 0; j < strArray[i].length(); j++) {
+                if (strArray[i].charAt(j) == ch)
+                    k++;
             }
         }
         return k;

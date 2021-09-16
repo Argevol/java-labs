@@ -17,7 +17,7 @@ public class Matrix {
         this.array = array;
     }
 
-    public Matrix Random(final int min, final int max) {
+    public Matrix random(final int min, final int max) {
         for (int i = 0; i < this.rows; i++) {
             for (int j = 0; j < this.columns; j++) {
                 this.array[i][j] = (int) ((Math.random() * (max - min)) + min);
@@ -26,7 +26,7 @@ public class Matrix {
         return this;
     }
 
-    public void PrintMatrix() {
+    public void printMatrix() {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 System.out.print(array[i][j] + " ");
@@ -35,7 +35,7 @@ public class Matrix {
         }
     }
 
-    public Matrix Transposition(){
+    public Matrix transposition() {
         final Matrix tMatrix = new Matrix(this.columns, this.rows);
 
         for (int i = 0; i < tMatrix.rows; i++) {
@@ -45,4 +45,5 @@ public class Matrix {
         }
         return tMatrix;
     }
+
 }

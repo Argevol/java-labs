@@ -4,11 +4,11 @@ public class Main {
     public static void main(final String[] args) {
         final Matrix mat = new Matrix(3, 2);
 
-        mat.Random(1, 9);
+        mat.random(1, 9);
 
-        mat.PrintMatrix();
+        mat.printMatrix();
 
-        (mat.Transposition()).PrintMatrix();
+        (mat.transposition()).printMatrix();
     }
 }
 

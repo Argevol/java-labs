@@ -6,13 +6,13 @@ public class Main {
             final Matrix mat1 = new Matrix(3, 2);
             final Matrix mat2 = new Matrix(3, 3);
 
-            mat1.Random(1, 9);
-            mat2.Random(1, 9);
+            mat1.random(1, 9);
+            mat2.random(1, 9);
 
-            mat1.PrintMatrix();
-            mat2.PrintMatrix();
+            mat1.printMatrix();
+            mat2.printMatrix();
 
-            (mat1.Multi(mat2)).PrintMatrix();
+            (mat1.multi(mat2)).printMatrix();
         } catch (final RuntimeException e) {
             System.out.println("Error");
         }

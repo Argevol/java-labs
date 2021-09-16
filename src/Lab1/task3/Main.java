@@ -7,17 +7,17 @@ public class Main {
         final int[] num = {3, 9, 2, 0, 4, 6, 8, 7, 5};
         final char[] ch = {'d', 'f', 'k', 's', 't', 'o', 'l'};
 
-        System.out.println(Combine(num, ch));
+        System.out.println(combine(num, ch));
     }
 
-    public static String Combine(final int[] num, final char[] ch){
+    public static String combine(final int[] num, final char[] ch) {
         String str = "";
         final int size = Math.max(num.length, ch.length);
-        for(int i = 0; i < size; i++){
-            if( i < num.length)
-                str += "" + num[i];
-            if(i < ch.length)
-                str += "" + ch[i];
+        for (int i = 0; i < size; i++) {
+            if (i < num.length)
+                str += num[i];
+            if (i < ch.length)
+                str += ch[i];
         }
         return str;
     }
