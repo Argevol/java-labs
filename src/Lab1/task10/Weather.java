@@ -1,5 +1,7 @@
 package Lab1.task10;
 
+import java.util.Objects;
+
 public class Weather {
     private int temperature;
     private String typeOfWeather;
@@ -64,27 +66,18 @@ public class Weather {
     }
 
     @Override
-    public boolean equals(final Object obj) {
-        if (obj == this) return true;
+    public boolean equals(final Object o) {
+        if (this == o) return true;
 
-        if (obj == null || this.getClass() != obj.getClass()) return false;
+        if (o == null || getClass() != o.getClass()) return false;
 
-        final Weather weather = (Weather) obj;
-        return this.getTemperature() == weather.getTemperature()
-                && (this.getTypeOfWeather() == weather.getTypeOfWeather()
-                || (this.getTypeOfWeather() != null && this.getTypeOfWeather().equals(weather.getTypeOfWeather())))
-                && (this.getHumidity() == weather.getHumidity())
-                && (this.getSpeedOfWind() == weather.getSpeedOfWind()
-                && (this.getAtmosphericPressure() == weather.getAtmosphericPressure()));
+        final Weather weather = (Weather) o;
+        return temperature == weather.temperature && humidity == weather.humidity && speedOfWind == weather.speedOfWind && atmosphericPressure == weather.atmosphericPressure && Objects.equals(typeOfWeather, weather.typeOfWeather);
     }
 
     @Override
     public int hashCode() {
-        return 31 * this.getTemperature() +
-                31 * this.getTypeOfWeather().hashCode() +
-                31 * this.getHumidity() +
-                31 * this.getSpeedOfWind() +
-                31 * this.getAtmosphericPressure();
+        return Objects.hash(temperature, typeOfWeather, humidity, speedOfWind, atmosphericPressure);
     }
 
     @Override

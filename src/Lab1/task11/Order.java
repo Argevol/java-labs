@@ -44,9 +44,7 @@ public class Order {
             throw new ArithmeticException("There is only " + taxiCar.getCapacity() + "seats");
     }
 
-    public Taxi getTaxiCar() {
-        return taxiCar;
-    }
+    public Taxi getTaxiCar() { return taxiCar; }
 
     public void setTaxiCar(final Taxi taxiCar) {
         this.taxiCar = taxiCar;

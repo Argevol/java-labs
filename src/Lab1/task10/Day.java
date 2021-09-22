@@ -2,6 +2,8 @@ package Lab1.task10;
 
 import jdk.jfr.Percentage;
 
+import java.util.Objects;
+
 public class Day {
     private Weather weather = new Weather();
     private String nameOfDay;
@@ -24,19 +26,18 @@ public class Day {
     }
 
     @Override
-    public boolean equals(final Object obj) {
-        if (obj == this) return true;
+    public boolean equals(final Object o) {
+        if (this == o) return true;
 
-        if (obj == null || this.getClass() != obj.getClass()) return false;
+        if (o == null || getClass() != o.getClass()) return false;
 
-        final Day day = (Day) obj;
-        return (this.getNameOfDay() == day.getNameOfDay()
-                || (this.getNameOfDay() != null && this.getNameOfDay().equals(day.getNameOfDay())));
+        final Day day = (Day) o;
+        return Objects.equals(weather, day.weather) && Objects.equals(nameOfDay, day.nameOfDay);
     }
 
     @Override
     public int hashCode() {
-        return this.getWeather().hashCode() + 31 * getNameOfDay().hashCode();
+        return Objects.hash(weather, nameOfDay);
     }
 
     @Override

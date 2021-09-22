@@ -1,6 +1,6 @@
 package Lab1.task11;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Client {
@@ -8,12 +8,12 @@ public class Client {
     private String surname;
     private int age;
     private String phoneNumber;
-    private Order[] orders;
+    ArrayList<Order> orders;
 
-    public Client(final String name, final String surname, final int age, final String phoneNumber, final Order[] orders) {
+    public Client(final String name, final String surname, final int age, final String phoneNumber, final ArrayList<Order> orders) {
         this.name = name;
         this.surname = surname;
-        setAge(age);
+        this.age = age;
         this.phoneNumber = phoneNumber;
         this.orders = orders;
     }
@@ -35,14 +35,11 @@ public class Client {
     }
 
     public int getAge() {
-        if (age >= 18)
-            return age;
-        else
-            throw new ArithmeticException("Age must be 18!");
+        return age;
     }
 
     public void setAge(final int age) {
-        this.age = age;
+        this.age = age >= 18 ? age : 18;
     }
 
     public String getPhoneNumber() {
@@ -53,12 +50,16 @@ public class Client {
         this.phoneNumber = phoneNumber;
     }
 
-    public Order[] getOrders() {
+    public ArrayList<Order> getOrders() {
         return orders;
     }
 
-    public void setOrders(final Order[] orders) {
+    public void setOrders(final ArrayList<Order> orders) {
         this.orders = orders;
+    }
+
+    public void giveOrder(final Order order) {
+        orders.add(order);
     }
 
     @Override
@@ -68,13 +69,11 @@ public class Client {
         if (o == null || getClass() != o.getClass()) return false;
 
         final Client client = (Client) o;
-        return age == client.age && Objects.equals(name, client.name) && Objects.equals(surname, client.surname) && Objects.equals(phoneNumber, client.phoneNumber) && Arrays.equals(orders, client.orders);
+        return age == client.age && Objects.equals(name, client.name) && Objects.equals(surname, client.surname) && Objects.equals(phoneNumber, client.phoneNumber) && Objects.equals(orders, client.orders);
     }
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(name, surname, age, phoneNumber);
-        result = 31 * result + Arrays.hashCode(orders);
-        return result;
+        return Objects.hash(name, surname, age, phoneNumber, orders);
     }
 }

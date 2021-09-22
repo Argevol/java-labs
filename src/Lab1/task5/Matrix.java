@@ -11,12 +11,6 @@ public class Matrix {
         array = new int[rows][columns];
     }
 
-    public Matrix(final int rows, final int columns, final int[][] array) {
-        this.rows = rows;
-        this.columns = columns;
-        this.array = array;
-    }
-
     public Matrix random(final int min, final int max) {
         for (int i = 0; i < this.rows; i++) {
             for (int j = 0; j < this.columns; j++) {

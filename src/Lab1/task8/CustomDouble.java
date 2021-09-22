@@ -1,5 +1,7 @@
 package Lab1.task8;
 
+import Lab1.task9.Calculator;
+
 public class CustomDouble {
     private int integer;
     private double fraction;
@@ -72,6 +74,31 @@ public class CustomDouble {
 
         result.integer = (int) minus;
         result.fraction = minus % 1;
+
+        return result;
+    }
+
+    public CustomDouble multi(final CustomDouble a) {
+        final CustomDouble result = new CustomDouble();
+
+        final double product = this.toDouble() * a.toDouble();
+
+        result.integer = (int) product;
+        result.fraction = product % 1;
+
+        return result;
+    }
+
+    public CustomDouble divide(final CustomDouble a) {
+        final CustomDouble result = new CustomDouble();
+
+        if (a.toDouble() == 0) {
+            throw new ArithmeticException("You can't divide by zero!");
+        }
+        final double division = this.toDouble() / a.toDouble();
+
+        result.integer = (int) division;
+        result.fraction = division % 1;
 
         return result;
     }
