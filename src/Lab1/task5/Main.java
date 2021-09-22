@@ -8,7 +8,7 @@ public class Main {
 
         mat.printMatrix();
 
-        (mat.transposition()).printMatrix();
+        mat.transposition().printMatrix();
     }
 }
 

@@ -3,14 +3,14 @@ package Lab1.task8;
 public class CustomDouble {
     private int integer;
     private double fraction;
-    boolean status;
+    private boolean isPositive;
 
     public CustomDouble() {
         this(true, 0, 0.0);
     }
 
     public CustomDouble(final boolean status, final int integer, final double fraction) {
-        setStatus(status);
+        setIsPositive(status);
         setInteger(integer);
         setFraction(fraction);
     }
@@ -23,18 +23,24 @@ public class CustomDouble {
         return fraction;
     }
 
-    public boolean getStatus() {
-        return status;
+    public boolean isPositive() {
+        return isPositive;
     }
 
     public void setInteger(final int integer) {
-        this.status = integer < 0 ? false : true;
+        this.isPositive = integer < 0 ? false : true;
 
         this.integer = Math.abs(integer);
     }
 
     public void setFraction(final double fraction) {
-        this.status = fraction < 0 ? false : true;
+        if (this.isPositive() == false) {
+            final int tmp = -this.integer;
+            this.isPositive = fraction < 0 || tmp < 0 ? false : true;
+        } else {
+            this.isPositive = fraction < 0 ? false : true;
+        }
+
 
         if (Math.abs(fraction) >= 1) {
             this.fraction = Math.abs(fraction) % 1;
@@ -44,8 +50,8 @@ public class CustomDouble {
         }
     }
 
-    public void setStatus(final boolean status) {
-        this.status = status;
+    public void setIsPositive(final boolean positive) {
+        this.isPositive = positive;
     }
 
     public CustomDouble add(final CustomDouble a) {
@@ -108,11 +114,11 @@ public class CustomDouble {
 
     @Override
     public String toString() {
-        return this.toDouble() + "";
+        return String.valueOf(this.toDouble());
     }
 
     public double toDouble() {
         double res = this.integer + this.fraction;
-        return res *= this.status == false ? -1 : 1;
+        return res *= isPositive() ? 1 : -1;
     }
 }

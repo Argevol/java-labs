@@ -1,5 +1,7 @@
 package Lab1.task7;
 
+import java.util.Objects;
+
 public class User {
     private String firstName;
     private String lastName;
@@ -56,7 +58,7 @@ public class User {
         if (obj == null || this.getClass() != obj.getClass()) return false;
 
         final User user = (User) obj;
-        return this.email == user.email;
+        return Objects.equals(email, user.email);
     }
 
     @Override

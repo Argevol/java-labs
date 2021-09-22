@@ -2,8 +2,8 @@ package Lab1.task8;
 
 public class Main {
     public static void main(final String[] args) {
-        final CustomDouble num1 = new CustomDouble(false, 0, -0.5);
-        final CustomDouble num2 = new CustomDouble(true, 4, 2.6);
+        final CustomDouble num1 = new CustomDouble(true, 0, 0.5);
+        final CustomDouble num2 = new CustomDouble(false, -4, -2.6);
 
         System.out.println("Number 1 = " + num1);
         System.out.println("Number 2 = " + num2);

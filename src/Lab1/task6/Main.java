@@ -13,8 +13,8 @@ public class Main {
             mat2.printMatrix();
 
             (mat1.multi(mat2)).printMatrix();
-        } catch (final RuntimeException e) {
-            System.out.println("Error");
+        } catch (final IndexOutOfBoundsException e) {
+            System.err.println(e.getMessage());
         }
     }
 }

@@ -16,13 +16,13 @@ public class Main {
     }
 
     public static int searchCount(final String[] strArray, final char ch) {
-        int k = 0;
+        int count = 0;
         for (int i = 0; i < strArray.length; i++) {
             for (int j = 0; j < strArray[i].length(); j++) {
                 if (strArray[i].charAt(j) == ch)
-                    k++;
+                    count++;
             }
         }
-        return k;
+        return count;
     }
 }

@@ -36,7 +36,7 @@ public class Matrix {
     }
 
     public Matrix multi(final Matrix matrix) {
-        if (this.columns != matrix.rows) throw new RuntimeException("Wrong matrix dimensions");
+        if (this.columns != matrix.rows) {throw new IndexOutOfBoundsException("Wrong matrix dimensions!");}
 
         final Matrix result = new Matrix(this.rows, matrix.columns);
 
