@@ -1,9 +1,6 @@
 package Lab2.task4;
 
-import Lab2.task3.Mark;
-import Lab2.task3.Student;
-import Lab2.task3.StudentList;
-import Lab2.task3.Subject;
+import Lab2.task3.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,9 +23,9 @@ public class Main {
 
         final List<Student> studentList = new ArrayList<>();
 
-        final Student student1 = new Student("Maksym", "Danyliuk", 2, id(),Student.Specialty.IT, subjectList, randomize(subjectList));
-        final Student student2 = new Student("Maria", "Suhorivska", 4, id(),Student.Specialty.SA, subjectList, randomize(subjectList));
-        final Student student3 = new Student("Igor", "Fenyak", 8, id(), Student.Specialty.SE, subjectList, randomize(subjectList));
+        final Student student1 = new Student("Maksym", "Danyliuk", 2, id(), Specialty.IT, subjectList, randomize(subjectList));
+        final Student student2 = new Student("Maria", "Suhorivska", 4, id(), Specialty.SA, subjectList, randomize(subjectList));
+        final Student student3 = new Student("Igor", "Fenyak", 8, id(), Specialty.SE, subjectList, randomize(subjectList));
 
         studentList.add(student1);
         studentList.add(student2);

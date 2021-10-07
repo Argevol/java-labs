@@ -17,7 +17,7 @@ public class Main {
 
         System.out.println(subjectList);
 
-        final Student student = new Student("Maksym", "Danyliuk", 2, id(),Student.Specialty.AL, subjectList, randomize(subjectList));
+        final Student student = new Student("Maksym", "Danyliuk", 2, id(), Specialty.AL, subjectList, randomize(subjectList));
         System.out.println(student);
 
     }
