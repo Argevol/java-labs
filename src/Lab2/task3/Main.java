@@ -17,7 +17,7 @@ public class Main {
 
         System.out.println(subjectList);
 
-        final Student student = new Student("Maksym", "Danyliuk", 2, id(), Specialty.AL, subjectList, randomize(subjectList));
+        final Student student = new Student("Maksym", "Danyliuk", 2, Specialty.AL, subjectList, randomize(subjectList));
         System.out.println(student);
 
     }
@@ -32,9 +32,5 @@ public class Main {
         }
 
         return markList;
-    }
-
-    public static int id(){
-        return (int) (Math.random() * (1000 - 0) + 0);
     }
 }

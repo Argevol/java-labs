@@ -10,15 +10,16 @@ public class Student {
     private String surname;
     private int course;
     private int id;
+    private static int count = 1;
     private Specialty specialty;
     private List<Subject> subjects;
     private List<Mark> marksOfSubjects;
 
-    public Student(final String name, final String surname, final int course, final int id, final Specialty specialty, final List<Subject> subjects, final List<Mark> marksOfSubjects) {
+    public Student(String name, String surname, int course, Specialty specialty, List<Subject> subjects, List<Mark> marksOfSubjects) {
         this.name = name;
         this.surname = surname;
         this.course = course;
-        this.id = id;
+        this.id = count++;
         this.specialty = specialty;
         this.subjects = subjects;
         this.marksOfSubjects = marksOfSubjects;
@@ -52,7 +53,7 @@ public class Student {
         return id;
     }
 
-    public void setId(final int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
