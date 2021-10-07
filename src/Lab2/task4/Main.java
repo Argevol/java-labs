@@ -23,9 +23,9 @@ public class Main {
 
         final List<Student> studentList = new ArrayList<>();
 
-        final Student student1 = new Student("Maksym", "Danyliuk", 2, id(), Specialty.IT, subjectList, randomize(subjectList));
-        final Student student2 = new Student("Maria", "Suhorivska", 4, id(), Specialty.SA, subjectList, randomize(subjectList));
-        final Student student3 = new Student("Igor", "Fenyak", 8, id(), Specialty.SE, subjectList, randomize(subjectList));
+        final Student student1 = new Student("Maksym", "Danyliuk", 2, Specialty.IT, subjectList, randomize(subjectList));
+        final Student student2 = new Student("Maria", "Suhorivska", 4, Specialty.SA, subjectList, randomize(subjectList));
+        final Student student3 = new Student("Igor", "Fenyak", 8, Specialty.SE, subjectList, randomize(subjectList));
 
         studentList.add(student1);
         studentList.add(student2);
@@ -51,7 +51,7 @@ public class Main {
 
         studentListClass.printBestStudent();
 
-        student1.printMap(history);
+        student3.printMap(history);
     }
 
     public static List<Mark> randomize(final List<Subject> subjectList){
@@ -64,9 +64,5 @@ public class Main {
         }
 
         return markList;
-    }
-
-    public static int id(){
-        return (int) (Math.random() * (10000 - 0) + 0);
     }
 }
