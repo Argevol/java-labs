@@ -49,7 +49,7 @@ public class Main {
             for(final String value : iterableStack){
                 System.out.println(value);
             }
-        } catch (final NullPointerException e) {
+        } catch (final RuntimeException e) {
             System.err.println(e.getMessage());
         }
     }
