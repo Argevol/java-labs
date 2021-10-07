@@ -12,7 +12,7 @@ public class IterableLinkedList<T> extends LinkedList<T> implements Iterable<T> 
         return new LinkedListIterator<T>();
     }
 
-    public class LinkedListIterator<T> implements Iterator<T> {
+    private class LinkedListIterator<T> implements Iterator<T> {
         Node<T> next = (Node<T>) top;
 
         @Override

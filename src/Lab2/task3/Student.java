@@ -10,7 +10,7 @@ public class Student {
     private String surname;
     private int course;
     private int id;
-    Specialty specialty;
+    private Specialty specialty;
     private List<Subject> subjects;
     private List<Mark> marksOfSubjects;
 
@@ -129,23 +129,5 @@ public class Student {
                 getSubjects().toString() + '\n' +
                 getMarksOfSubjects().toString() + '\n' +
                 "}";
-    }
-
-    public enum Specialty {
-        IT("Informational Technologies"),
-        SE("Software Engineering"),
-        CS("Computer Science"),
-        AL("Applied Linguistics"),
-        SA("System Analyze");
-
-        private String description;
-
-        Specialty(final String description) {
-            this.description = description;
-        }
-
-        public String getDescription() {
-            return description;
-        }
     }
 }
