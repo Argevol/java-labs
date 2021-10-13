@@ -9,6 +9,7 @@ public class Main {
 
             stack.push(3);
             stack.push(54);
+
             stack.push(-9);
             stack.push(-12);
             stack.push(0);
