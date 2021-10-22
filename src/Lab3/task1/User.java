@@ -80,22 +80,23 @@ public class User {
     public void validate() {
         final List<String> exceptionsMessages = new ArrayList<>();
 
-        if (getAddress().getStreet().contains(" ") | getAddress().getStreet().matches("(.*)\\d+(.*)")) {
+        if (getAddress().getStreet().contains(" ") || getAddress().getStreet().matches("(.*)\\d+(.*)")) {
             exceptionsMessages.add("Name of street can't have numbers or spaces");
         }
 
-        if(getAddress().getNumberOfHouse() < 1 && getAddress().getNumberOfHouse() > 1000)
+        if (getAddress().getNumberOfHouse() < 1 || getAddress().getNumberOfHouse() > 1000) {
             exceptionsMessages.add("Number of house must be in in range from 1 to 1000");
+        }
 
-        if (getFirstName().contains(" ") | getFirstName().matches("(.*)\\d+(.*)")) {
+        if (getFirstName().contains(" ") || getFirstName().matches("(.*)\\d+(.*)")) {
             exceptionsMessages.add("Firstname can't have numbers or spaces");
         }
 
-        if (getLastName().contains(" ") | getLastName().matches("(.*)\\d+(.*)")) {
+        if (getLastName().contains(" ") || getLastName().matches("(.*)\\d+(.*)")) {
             exceptionsMessages.add("Lastname can't have numbers or spaces");
         }
 
-        if (!getEmail().endsWith("@gmail.com")) {
+        if (getEmail().contains(" ") || !getEmail().matches("(.*)@gmail.com")) {
             exceptionsMessages.add("Email must end with '@gmail.com'");
         }
 
