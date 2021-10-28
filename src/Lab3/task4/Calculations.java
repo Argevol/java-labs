@@ -6,7 +6,7 @@ public class Calculations {
         System.out.println("Addition started: " + num1 + " + " + num2);
         try {
             Thread.sleep(2000);
-        } catch (InterruptedException e){
+        } catch (final InterruptedException e){
             System.out.println("Interrupted exception");
             Thread.currentThread().interrupt();
         }
@@ -17,7 +17,7 @@ public class Calculations {
         System.out.println("Subtraction started: " + num1 + " - " + num2);
         try {
             Thread.sleep(2000);
-        } catch (InterruptedException e){
+        } catch (final InterruptedException e){
             System.out.println("Interrupted exception");
         }
         System.out.println("Subtraction finished: " + (num1 - num2));
@@ -27,7 +27,7 @@ public class Calculations {
         System.out.println("Multiplication started: " + num1 + " * " + num2);
         try {
             Thread.sleep(2000);
-        } catch (InterruptedException e){
+        } catch (final InterruptedException e){
             System.out.println("Interrupted exception");
         }
         System.out.println("Multiplication finished: " + (num1 * num2));
@@ -37,7 +37,7 @@ public class Calculations {
         System.out.println("Division started: " + num1 + " / " + num2);
         try {
             Thread.sleep(2000);
-        } catch (InterruptedException e){
+        } catch (final InterruptedException e){
             System.out.println("Interrupted exception");
         }
         System.out.println("Division finished: " + (num1 / num2));
