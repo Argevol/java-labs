@@ -6,6 +6,7 @@ import Lab2.task3.Student;
 import Lab2.task3.Subject;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,8 +30,8 @@ public class Main {
 
         final Student student1 = new Student("Максим", "Данилюк", 2, Specialty.IT, subjectList, randomize(subjectList));
         final Student student2 = new Student("Андрій", "Сухорівський", 4, Specialty.SA, subjectList, randomize(subjectList));
-        final Student student3 = new Student("Ігор", "Феняк", 8, Specialty.SE, subjectList, randomize(subjectList));
-        final Student student4 = new Student("Юрій", "Шевченко", 2, Specialty.IT, subjectList, randomize(subjectList));
+        final Student student3 = new Student("Максим", "Феняк", 8, Specialty.SE, subjectList, randomize(subjectList));
+        final Student student4 = new Student("Максим", "Шевченко", 2, Specialty.IT, subjectList, randomize(subjectList));
 
         studentList.add(student1);
         studentList.add(student2);
@@ -39,17 +40,17 @@ public class Main {
 
         System.out.println(studentList);
 
-//        System.out.println(casting(studentList));
-//
-//        System.out.println(deleteAver(studentList));
-//
-//        System.out.println(sorting(studentList));
-//
-//        System.out.println(addLineToSurname(studentList));
-//
-//        System.out.println(printEnglishMarks(studentList));
+        System.out.println(casting(studentList));
 
-        findBest(studentList);
+        System.out.println(deleteAver(studentList));
+
+        System.out.println(sorting(studentList));
+
+        System.out.println(addLineToSurname(studentList));
+
+        System.out.println(printEnglishMarks(studentList));
+
+        System.out.println(findBest(studentList));
     }
 
     public static List<StudentSimple> casting(final List<Student> studentList) {
@@ -81,13 +82,11 @@ public class Main {
                 .collect(Collectors.toList());
     }
 
-    public static void findBest(final List<Student> studentList) {
-        //ToDo make a method that can find student with the biggest average mark
-        studentList.stream()
-                .map(student -> student.getMarksOfSubjects().stream()
-                        .mapToInt(Mark::getMark)
-                        .average().orElse(0.0))
-                .reduce(Double::max).orElse(0.0);
+    public static Student findBest(final List<Student> studentList) {
+      return studentList.stream()
+              .max(Comparator.comparingDouble(student -> student.getMarksOfSubjects().stream()
+                      .mapToInt(Mark::getMark).average().getAsDouble()))
+              .get();
     }
 
     public static List<String> addLineToSurname(final List<Student> studentList) {
