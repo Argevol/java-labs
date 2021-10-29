@@ -48,7 +48,7 @@ public class Main {
 
         System.out.println(addLineToSurname(studentList));
 
-        System.out.println(printEnglishMarks(studentList));
+        System.out.println(printMarks(studentList, english));
 
         System.out.println(findBest(studentList));
     }
@@ -66,19 +66,18 @@ public class Main {
                 .collect(Collectors.toList());
     }
 
-    public static List<Mark> printEnglishMarks(final List<Student> studentList) {
+    public static List<Mark> printMarks(final List<Student> studentList, final Subject subject) {
         return studentList.stream()
                 .map(student -> student.getMarksOfSubjects().get((student.getSubjects().stream()
                         .map(Subject::getNameOfSubject)
-                        .collect(Collectors.toList()).indexOf("English"))))
+                        .collect(Collectors.toList()).indexOf(subject.getNameOfSubject()))))
                 .collect(Collectors.toList());
     }
 
     public static List<Student> sorting(final List<Student> studentList) {
         return studentList.stream()
-                .sorted((o1, o2) -> o1.getName().equals(o2.getName()) ?
-                        o1.getSurname().compareTo(o2.getSurname()) :
-                        o1.getName().compareTo(o2.getName()))
+                .sorted(Comparator.comparing(Student::getName).
+                        thenComparing(Student::getSurname))
                 .collect(Collectors.toList());
     }
 
