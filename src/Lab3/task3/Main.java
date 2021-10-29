@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         final List<Subject> subjectList = new ArrayList<>();
 
         final Subject english = new Subject("English");

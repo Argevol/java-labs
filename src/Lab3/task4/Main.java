@@ -16,12 +16,12 @@ public class Main {
         thread3.start();
         thread4.start();
 
-        ExecutorService executor = Executors.newFixedThreadPool(4);
+        final ExecutorService executor = Executors.newFixedThreadPool(4);
         executor.execute(thread5);
 
         try{
             executor.shutdown();
-        } catch (Exception e){
+        } catch (final Exception e){
             executor.shutdown();
         } finally {
             executor.shutdownNow();
