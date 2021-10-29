@@ -96,8 +96,8 @@ public class User {
             exceptionsMessages.add("Lastname can't have numbers or spaces");
         }
 
-        if (getEmail().contains(" ") || getEmail().matches("(.*)@gmail.com")) {
-            exceptionsMessages.add("Email must end with '@gmail.com' and have at least 1 sign");
+        if (getEmail().contains(" ") || !getEmail().matches("[a-zA-Z0-9]{3,14}@gmail.com")) {
+            exceptionsMessages.add("Email must end with '@gmail.com' and have at least 3 signs");
         }
 
         if (getAge() < 16) {
